@@ -46,7 +46,7 @@ const PaymentPage = ({ username, success }) => {
             name: 'Get Me A Chai',
             description: paymentForm.message,
             order_id: order.id, // This is the order_id created in the backend
-            callback_url: `${process.env.NEXT_PUBLIC_HOST}/api/razorpay`, // Your success URL
+            callback_url: '/api/razorpay', // Your success URL
             prefill: {
                 name: paymentForm.name,
                 email: 'gaurav.kumar@example.com',
