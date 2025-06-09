@@ -92,7 +92,7 @@ export const fetchUserName = async (email) => {
 
 export const fetchPaymentDetails = async (username) => {
     await connectDB();
-    const data = await Payment.find({to_user:username});
+    const data = await Payment.find({to_user:username,done:true})    
     let totalAmount = 0,totalAmountCount = 0;
     if(!data){
         return {totalAmount,totalAmountCount};

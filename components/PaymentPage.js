@@ -79,9 +79,10 @@ const PaymentPage = ({ username, success }) => {
             const pic = await fetchProfilePic(username);
             setProfile(pic);
             setPayment(newPayment);
+            
         }
         paymentData();
-        setLoading(true);
+        setLoading(true);        
     }, [success,router, username]);
 
     if (!loading) {
