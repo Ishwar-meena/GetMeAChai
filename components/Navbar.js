@@ -50,6 +50,7 @@ const Navbar = React.memo(() => {
     <nav className="relative flex items-center justify-between sm:px-8 px-2 py-2 bg-blue-950">
       <div className="sm:text-2xl text-xl flex items-center gap-2 cursor-pointer text-white">
         <Image
+          unoptimized
           width={40}
           height={40}
           src="/tea.gif"

@@ -8,7 +8,7 @@ A modern platform to connect chai lovers and local tea vendors. Discover, order,
 
 ## 🚀 Live Demo
 
-[🌐 View Live Project](https://getmeachai.example.com)
+[🌐 View Live Project]()
 
 ---
 

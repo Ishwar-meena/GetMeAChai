@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
-function HeroCard() {
+function HeroCard({ src }) {
   return <div className="box sm:my-10 my-5 gap-1 flex flex-col items-center">
     <div className="img bg-gray-500 p-2 rounded-full">
       <Image
         width={64}
         height={64}
-        src="/man.gif"
-        alt="man"
+        src={src}
+        alt={src}
         className="h-16" />
     </div>
     <h4 className="font-semibold">Fans want to help</h4>
@@ -42,9 +42,16 @@ const HeroSection = () => {
         <div className="mt-8">
           <h2 className="text-2xl  text-center font-medium">Your fans can buy you a Chai</h2>
           <div className="boxes flex sm:flex-row flex-col items-center justify-around">
-            <HeroCard />
-            <HeroCard />
-            <HeroCard />
+            <HeroCard
+              src={"/man.gif"}
+            />
+            <HeroCard
+              src={"/coin.gif"}
+            />
+            <HeroCard
+              src={"/man.gif"}
+            />
+
           </div>
         </div>
       </div>
