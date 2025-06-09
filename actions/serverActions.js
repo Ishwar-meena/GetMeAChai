@@ -99,7 +99,7 @@ export const fetchPaymentDetails = async (username) => {
     }
     data.forEach((d,idx)=>{
         totalAmount += d.amount;
-        totalAmountCount = idx;
+        totalAmountCount = idx+1;
     });
     return {totalAmount,totalAmountCount};
 }

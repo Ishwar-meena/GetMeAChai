@@ -69,6 +69,7 @@ const PaymentPage = ({ username, success }) => {
     }, [])
 
     useEffect(() => {
+        setLoading(false);
         if (success === 'true') {
             toast.success('Payment successfully done!');
             router.replace(`/${username}`);
