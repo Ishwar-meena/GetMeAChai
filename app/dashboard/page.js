@@ -34,7 +34,6 @@ const Dashboard = () => {
         profilePic: data.profilePic,
       }
       );
-      console.log(data);
     }
     if (session && session.user?.email) {
       getData(session.user.email);

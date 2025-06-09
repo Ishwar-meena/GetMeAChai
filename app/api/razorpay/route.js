@@ -8,7 +8,6 @@ export const POST = async(req)=>{
     await connectDB();
     let body = await req.formData();
     body = Object.fromEntries(body);
-    // console.log(body);
 
     // check if razorpay payment id is available on server/db or not 
     const razorpayPaymentId = await Payment.findOne({orderId:body.razorpay_order_id});
