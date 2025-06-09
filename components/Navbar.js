@@ -88,7 +88,13 @@ const Navbar = React.memo(() => {
                 className="text-white cursor-pointer bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg px-3 py-1 inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button"
               >
-                <img src={session && session.user.image} alt={session.user.img && session.user.name} className='h-9 mr-1.5 rounded-full' />
+                <Image
+                width={36}
+                height={36} 
+                src={session && session.user.image} 
+                alt={session.user.img ? session.user.name:"userpic"} 
+                className='h-9 mr-1.5 rounded-full' 
+                />
                 {session ? session.user.name : "none"}
                 <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
@@ -124,4 +130,5 @@ const Navbar = React.memo(() => {
   );
 });
 
+Navbar.displayName = "Navbar"; // For better debugging in React DevTools
 export default Navbar;

@@ -32,11 +32,11 @@ const Login = () => {
     return (
         <div className="box h-[80vh] flex flex-col gap-5 items-center justify-center">
             <LoginCard
-                img={"google.png"}
+                img={"/google.png"}
                 provider={"Google"}
             />
             <LoginCard
-                img={"github.png"}
+                img={"/github.png"}
                 provider={"GitHub"}
             />
         </div>

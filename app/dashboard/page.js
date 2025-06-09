@@ -27,13 +27,13 @@ const Dashboard = () => {
   useEffect(() => {
     const getData = async (email) => {
       const data = await fetchUserDetails(email);
-      setFormData({
-        ...formData,
-        username: data.username,
-        email: data.email,
-        profilePic: data.profilePic,
-      }
-      );
+      setFormData(prev =>(
+        {
+          ...prev,
+          username : data.username,
+          email : data.email,
+          profilePic : data.profilePic,
+        }));
     }
     if (session && session.user?.email) {
       getData(session.user.email);

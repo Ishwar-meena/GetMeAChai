@@ -7,9 +7,9 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-const UserMessage = React.memo(({ name, amount, message }) => {
+const UserMessage = React.memo(function UserMessage({ name, amount, message }){
     return <div className="user-message mt-1.5 flex gap-1 items-center">
-        <div className="img">
+        <div>
             <Image
                 unoptimized
                 height={32}
@@ -19,7 +19,7 @@ const UserMessage = React.memo(({ name, amount, message }) => {
                 className="h-8"
             />
         </div>
-        <p className="text-sm">{name} donated <b>₹{amount / 100}</b> with a message "{message}" </p>
+        <p className="text-sm">{name} donated <b>₹{amount / 100}</b> with a message &quot;{message}&quot; </p>
     </div>
 });
 
@@ -66,7 +66,7 @@ const PaymentPage = ({ username, success }) => {
             setMessages(data);
         }
         getMessages();
-    }, [])
+    }, [username])
 
     useEffect(() => {
         setLoading(false);
@@ -82,7 +82,7 @@ const PaymentPage = ({ username, success }) => {
         }
         paymentData();
         setLoading(true);
-    }, [success])
+    }, [success,router, username]);
 
     if (!loading) {
         return (
