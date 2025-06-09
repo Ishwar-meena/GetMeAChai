@@ -12,9 +12,14 @@ const userSchema = new Schema({
         required: true,
         unique: true,
     },
-    avatar: {
-        type: String,
-        required: true,
+    profilePic:{
+        type:String,
+    },
+    razorpayId:{
+        type:String,
+    },
+    razorpaySecret:{
+        type:String,
     },
     createdAt: {
         type: Date,

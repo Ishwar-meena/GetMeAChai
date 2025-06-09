@@ -2,10 +2,14 @@ import PaymentPage from "@/components/PaymentPage";
 
 
 
-const Username = async({params}) => {
+const Username = async({params,searchParams}) => {
     const {username} = await params;
+    const success = (await searchParams).success;
     return (
-        <PaymentPage username={decodeURI(username).replaceAll(" ", "")}/>
+        <PaymentPage 
+         success={success}
+         username={decodeURI(username).replaceAll(" ", "")}
+         />
     )
 }
 

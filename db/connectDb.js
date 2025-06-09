@@ -4,11 +4,10 @@ const connectDB = async () => {
     try {
         let connection;
         if(!connection){
-            connection = await mongoose.connect("mongodb://localhost:27017/chai");
+            connection = await mongoose.connect(process.env.MONGOURI);
         }
     } catch (error) {
         console.error(error.message);
-        process.exit(1);
     }
 }
 

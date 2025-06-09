@@ -1,4 +1,3 @@
-// lib/authOptions.js
 import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import User from "@/models/User";
@@ -16,15 +15,15 @@ export const authOptions = {
         }),
     ],
     callbacks: {
-        async signIn({ user, account, profile, email, credentials }) {
+        async signIn({ user}) {
             try {
                 const client = await connectDB();
                 const currentUser = await User.findOne({ email: user.email });
                 if (!currentUser) {
                     const newUser = new User({
                         email: user.email,
-                        username: user.name.replaceAll(" ", ""),
-                        avatar: user.image,
+                        username: user.email,
+                        profilePic: user.image,
                     })
                     await newUser.save();
                 }

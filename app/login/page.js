@@ -4,9 +4,9 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 function LoginCard({ provider, img }) {
-    return <button onClick={() => signIn(provider.toLowerCase())} className="provider cursor-pointer flex items-center justify-between gap-4 px-4 py-2 rounded-sm bg-white text-black">
-        <img src={img} alt={img} className="h-6" />
-        <p className="text-lg font-medium ">Login with {provider}</p>
+    return <button onClick={() => signIn(provider.toLowerCase(),{ callbackUrl: '/dashboard' })} className="provider cursor-pointer flex items-center justify-between gap-4 px-4 py-2 rounded-sm bg-white text-black">
+        <img src={img} alt={provider} className="h-6" />
+        <p className="text-lg font-medium ">Continue with {provider}</p>
     </button>
 }
 
