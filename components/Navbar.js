@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import Link from 'next/link';
 import { fetchUserName } from '@/actions/serverActions';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const Navbar = React.memo(() => {
   const [dropdown, setDropdown] = useState(false);
@@ -48,7 +49,13 @@ const Navbar = React.memo(() => {
   return (
     <nav className="relative flex items-center justify-between sm:px-8 px-2 py-2 bg-blue-950">
       <div className="sm:text-2xl text-xl flex items-center gap-2 cursor-pointer text-white">
-        <img src="tea.gif" alt="tea" className="h-10 invert-75" />
+        <Image
+          width={40}
+          height={40}
+          src="/tea.gif"
+          alt="tea"
+          className="h-10 invert-75"
+        />
         <Link href={'/'}>GetMeAChai</Link>
       </div>
 

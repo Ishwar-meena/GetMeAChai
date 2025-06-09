@@ -2,10 +2,17 @@
 import { useSession, signIn } from "next-auth/react"
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import Image from "next/image";
 
 function LoginCard({ provider, img }) {
-    return <button onClick={() => signIn(provider.toLowerCase(),{ callbackUrl: '/dashboard' })} className="provider cursor-pointer flex items-center justify-between gap-4 px-4 py-2 rounded-sm bg-white text-black">
-        <img src={img} alt={provider} className="h-6" />
+    return <button onClick={() => signIn(provider.toLowerCase(), { callbackUrl: '/dashboard' })} className="provider cursor-pointer flex items-center justify-between gap-4 px-4 py-2 rounded-sm bg-white text-black">
+        <Image
+            width={24}
+            height={24}
+            src={img}
+            alt={provider}
+            className="h-6"
+        />
         <p className="text-lg font-medium ">Continue with {provider}</p>
     </button>
 }
